@@ -1,0 +1,48 @@
+1 - Defining Variables in JS 
+  var message = "Hello";
+  const pi = 3.14;
+  let score = 0;
+
+2 - Creating Unchanging Variables with Const
+  Using const : We don't expect to change this guy after initializing it
+  Example: pi is a constant and will not be changed so it should be a const
+  But score is constantly updated in the program for example so we don't want to use it as const
+
+3 - Using Constants and Arrays with Objects
+  We've said earlier that we cant modify const once it is initialized
+  But when we do something like:
+  const days = ['mon', 'tue']
+  We still can change 'days' by push, pop, reassign values ...
+  Like: days['mon'] = 'Monday'
+        days.push('Wednesday')
+        days.pop()
+  Except we don't reassign totally 'days' for a new array like: days = ['Thursday','Friday'];
+  It will be fine. So what happened here? Actually we don't change 'days' const
+  'days' just keep a reference to our actual array (means 'days' points to actual object)
+  And here we changed object, we did not change 'days' which is constant
+  When we totally reassign 'days' to a new array, it causes an error because
+  we are pointing days to somewhere else
+  
+  The same concept for 'object'
+
+4 - Defining a Variable with Let
+  In a lot of cases, 'let' seems to works similar as 'var'?
+
+5 - Using Let with For Loops
+Consider this case: 
+
+const buttons = document.getElementsByTagName('button');
+for (var i = 0; i < buttons.length; i++){
+  const button = buttons[i];
+  
+  button.addEventListener('click', function(){
+    alert('button ' + i + ' pressed!');
+  });
+}
+
+'var' keyword in this case causes unexpected result. Because 'var' keyword make i is attached to scope of its outer function
+So i is just one instance for all the loops, and it will keep the final i which 'buttons.length' in this case
+To avoid this, we use 'let' instead of 'var'
+'let' will attached different i to each loop
+
+Notice: 'const' is also cause block-scope like 'let'
