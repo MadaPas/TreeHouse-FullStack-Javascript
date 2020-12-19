@@ -1,3 +1,9 @@
+INTERACTIVE PAGES WITH JS
+    - selecting elements on a page
+    - manipulating elements
+    - listening for user actions
+
+
 1 - A simple Example
 
   const myHeading = document.getElementById('myHeading');
