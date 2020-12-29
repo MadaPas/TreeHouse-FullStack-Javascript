@@ -16,3 +16,13 @@ button.addEventListener('click', () => {
 //ul.innerHTML
 //ul.innerHTML = "<li>red cabbage</li>"
 //
+
+//
+//Element.attribute
+//
+
+//input.type
+//input.className
+//input.type = 'checkbox'
+
+p.title = "List description";
