@@ -3,9 +3,22 @@
 //myHeading.textContent
 //myHeading.textContent = "This is a newwwww heading"
 
-const input = document.querySelector('input');
+const toggleList = document.getElementById('toggleList');
+const listDiv = document.querySelector('.list');
+
+const input = document.querySelector('input.description');
 const p = document.querySelector('p.description');
-const button = document.querySelector('button');
+const button = document.querySelector('button.description');
+
+toggleList.addEventListener('click', () => { 
+  if (listDiv.style.display == 'none') {
+    toggleList.textContent = 'Hide list';
+    listDiv.style.display = 'block';
+  } else {
+    toggleList.textContent = 'Show list';
+    listDiv.style.display = 'none';
+  }
+});
 
 button.addEventListener('click', () => {
   p.textContent = input.value + ':';
@@ -26,3 +39,11 @@ button.addEventListener('click', () => {
 //input.type = 'checkbox'
 
 p.title = "List description";
+
+//
+// element.style
+//
+
+p.style
+p.style.color = 'darkblue'
+p.style.backgroundColor = 'lightblue'
