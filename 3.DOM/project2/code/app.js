@@ -24,7 +24,8 @@ toggleList.addEventListener('click', () => {
 });
 
 descriptionButton.addEventListener('click', () => {
-  descriptionP.textContent = descriptionInput.value + ':';
+  descriptionP.innerHTML = descriptionInput.value + ':';
+  descriptionInput.value = '';
 });
 
 
@@ -53,11 +54,16 @@ p.title = "List description";
 
 //
 // document.createElement()
+// Node.appendChild(childElement)
 //
 
 addItemButton.addEventListener('click', () => {
+   let ul = document.getElementsByTagName('ul')[0];
    let li = document.createElement('li');
-   p.innerHTML = input.value + ';';
-                               
+   li.textContent = addItemInput.value;
+   ul.appendChild(li);
+   addItemInput.value = '';
 });
+
+
 
