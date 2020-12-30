@@ -10,6 +10,8 @@ const descriptionInput = document.querySelector('input.description');
 const descriptionP = document.querySelector('p.description');
 const descriptionButton = document.querySelector('button.description');
 
+const listUl = listDiv.querySelector('ul');
+
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 
@@ -26,17 +28,29 @@ const removeItemButton = document.querySelector('button.removeItemButton');
 //});
 //}
 //
-listDiv.addEventListener('mouseover', (event) => {
-  if (event.target.tagName == 'LI') {
-  event.target.textContent = event.target.textContent.toUpperCase();
+
+
+//listDiv.addEventListener('mouseover', (event) => {
+//  if (event.target.tagName == 'LI') {
+//  event.target.textContent = event.target.textContent.toUpperCase();
+//  }
+//});
+//
+//
+//listDiv.addEventListener('mouseout', (event) => {
+//    if (event.target.tagName == 'LI') {
+//  event.target.textContent = event.target.textContent.toLowerCase();
+//   }
+//});
+
+
+listUl.addEventListener('click', (event) => {
+  if (event.target.tagName == 'BUTTON') {
+     let li = event.target.parentNode;
+    let ul = li.parentNode;
+    ul.removeChild(li);
+    
   }
-});
-
-
-listDiv.addEventListener('mouseout', (event) => {
-    if (event.target.tagName == 'LI') {
-  event.target.textContent = event.target.textContent.toLowerCase();
-   }
 });
 
 document.addEventListener('click', () => {
